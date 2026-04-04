@@ -9,7 +9,7 @@ import {
   Landmark,
   LayoutDashboard,
   Mic2,
-  PlayCircle,
+
   ShieldCheck,
   Sprout,
   Wallet,
@@ -311,4 +311,4 @@ export const heroMeta = {
   secondaryLine: "The blueprint for a life you do not need to escape from."
 };
 
-export const badgeItems = [CalendarDays, PlayCircle, ArrowUpRight];
+export const badgeItems = [CalendarDays, ArrowUpRight];
