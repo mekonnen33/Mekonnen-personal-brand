@@ -210,23 +210,27 @@ export default function HomePage() {
           <div className="mt-10 grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
             <Reveal>
               <div className="card-base overflow-hidden p-3 sm:p-4">
-                <div className="aspect-video overflow-hidden rounded-[24px] border border-white/10 bg-black">
-                  <iframe
-                    className="h-full w-full"
-                    title="Talk Sense video placeholder"
-                    srcDoc={`
-                      <!doctype html>
-                      <html>
-                        <body style="margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#0d0d0d;color:#f5f5f5;font-family:Inter,Arial,sans-serif;">
-                          <div style="text-align:center;padding:24px;">
-                            <div style="display:inline-block;padding:10px 18px;border:1px solid rgba(201,168,76,.35);border-radius:999px;color:#c9a84c;margin-bottom:16px;">Talk Sense</div>
-                            <h2 style="margin:0 0 12px;font-size:32px;">YouTube embed placeholder</h2>
-                            <p style="margin:0;color:#a3a3a3;max-width:520px;line-height:1.6;">Swap this iframe with your featured Talk Sense episode, trailer, or latest upload.</p>
-                          </div>
-                        </body>
-                      </html>
-                    `}
-                  />
+                <div className="aspect-video overflow-hidden rounded-[24px] border border-white/10 bg-black flex items-center justify-center">
+                  <div className="text-center px-8 py-12 space-y-6">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-5 py-2 text-sm text-gold">
+                      <CirclePlay className="h-4 w-4" />
+                      Talk Sense
+                    </div>
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-semibold text-text sm:text-3xl">Episodes dropping soon.</h3>
+                      <p className="text-base leading-7 text-muted max-w-md mx-auto">
+                        Real conversations on entrepreneurship, wealth, health, and building a life with purpose. Subscribe so you don't miss the first episode.
+                      </p>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/@talksense360"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="button-primary inline-flex"
+                    >
+                      Subscribe on YouTube
+                    </a>
+                  </div>
                 </div>
               </div>
             </Reveal>
