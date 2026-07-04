@@ -20,8 +20,10 @@ import { SectionTitle } from '@/components/section-title';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { ToolCard } from '@/components/tool-card';
+import { VentureCard } from '@/components/venture-card';
 import {
   collaborationOptions,
+  ventures,
   connectPlaceholderLinks,
   episodes,
   freeGuide,
@@ -144,6 +146,23 @@ export default function HomePage() {
             {pillars.map((pillar, index) => (
               <Reveal key={pillar.title} delay={index * 90}>
                 <PillarCard pillar={pillar} />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section id="ventures" className="section-shell py-16 sm:py-20 lg:py-24">
+          <Reveal>
+            <SectionTitle
+              eyebrow={sectionEyebrows.ventures}
+              title="Everything I am building"
+              description="Multiple ventures, one mission. Each one is a different expression of wealth, health, or service."
+            />
+          </Reveal>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {ventures.map((venture, index) => (
+              <Reveal key={venture.name} delay={index * 60}>
+                <VentureCard venture={venture} />
               </Reveal>
             ))}
           </div>
