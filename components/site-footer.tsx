@@ -18,7 +18,7 @@ export function SiteFooter() {
               </div>
             </div>
             <p className="max-w-2xl text-base leading-7 text-muted">
-              Founder, Sensible Living Foundation | Mac Financial Group | U.S. Army Reserve
+              Founder, Sensible Living Foundation | Mac Financial Group | Proud U.S. Army Member
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               {socialItems.map((item) => {
