@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Mekonnen Anebo | Wealth. Health. Service.',
   description:
-    'Personal brand website for Mekonnen Anebo, entrepreneur, Army Reserve Intelligence Analyst, nonprofit founder, and builder in public.',
+    'Ethiopian-American entrepreneur, nonprofit founder, Army member, and financial educator building in public. Sharing the real journey of wealth, health, and service.',
   metadataBase: new URL('https://mekonnenanebo.com'),
   openGraph: {
     title: 'Mekonnen Anebo | Wealth. Health. Service.',
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     siteName: 'Mekonnen Anebo',
     type: 'website'
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mekonnen Anebo | Wealth. Health. Service.',
+    description: 'The blueprint for a life you do not need to escape from.'
+  },
   icons: {
     icon: '/favicon.svg'
   }
@@ -30,7 +35,31 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Mekonnen Anebo",
+              "url": "https://mekonnenanebo.com",
+              "sameAs": [
+                "https://www.instagram.com/mr_mac_",
+                "https://www.youtube.com/@talksense360",
+                "https://www.linkedin.com/in/manebo"
+              ],
+              "jobTitle": "Entrepreneur, Nonprofit Founder, Financial Educator",
+              "description": "Ethiopian-American entrepreneur building wealth, health, and service. Founder of Sensible Living Foundation. Proud U.S. Army Member.",
+              "worksFor": [
+                { "@type": "Organization", "name": "Sensible Living Foundation" },
+                { "@type": "Organization", "name": "Mac Financial Group" }
+              ]
+            })
+          }}
+        />
+      </body>
     </html>
   );
 }
