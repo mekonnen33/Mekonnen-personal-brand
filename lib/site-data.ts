@@ -9,7 +9,6 @@ import {
   Landmark,
   LayoutDashboard,
   Mic2,
-
   ShieldCheck,
   Sprout,
   Wallet,
@@ -44,12 +43,14 @@ export type BlogPost = {
   excerpt: string;
   date: string;
   href: string;
+  comingSoon?: boolean;
 };
 
 export type Episode = {
   title: string;
   description: string;
   href: string;
+  comingSoon?: boolean;
 };
 
 export type ToolItem = {
@@ -65,9 +66,17 @@ export type CollaborationOption = {
   icon: LucideIcon;
 };
 
+export type Venture = {
+  name: string;
+  description: string;
+  href: string;
+  category: string;
+};
+
 export const navItems: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'Pillars', href: '#pillars' },
+  { label: 'Ventures', href: '#ventures' },
   { label: 'Blog', href: '#blog' },
   { label: 'Talk Sense', href: '#talk-sense' },
   { label: 'Resources', href: '#resources' },
@@ -78,17 +87,17 @@ export const navItems: NavItem[] = [
 export const socialItems: SocialItem[] = [
   {
     label: 'Instagram',
-    href: 'https://instagram.com/yourhandle',
+    href: 'https://www.instagram.com/mr_mac_',
     icon: Instagram
   },
   {
     label: 'YouTube',
-    href: 'https://youtube.com/@talksense',
+    href: 'https://www.youtube.com/@talksense360',
     icon: Youtube
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/yourprofile',
+    href: 'https://www.linkedin.com/in/manebo',
     icon: Linkedin
   }
 ];
@@ -117,48 +126,105 @@ export const pillars: Pillar[] = [
   }
 ];
 
+export const ventures: Venture[] = [
+  {
+    name: 'Sensible Living Foundation',
+    description: 'Nonprofit improving wealth and health outcomes in underserved communities through financial literacy and food access programs.',
+    href: 'https://sensiblelivingfoundation.org',
+    category: 'Nonprofit'
+  },
+  {
+    name: 'Mac Financial Group',
+    description: 'Financial services built around insurance, credit, and wealth strategy for individuals and families.',
+    href: '#connect',
+    category: 'Financial Services'
+  },
+  {
+    name: 'ServiceFlow',
+    description: 'Websites and automation systems for service businesses. More clients, less chaos, built for you.',
+    href: 'https://svc-flow.com',
+    category: 'Agency'
+  },
+  {
+    name: 'Viral Prints',
+    description: 'Precision wall printing and custom murals that transform business spaces into branded immersive environments.',
+    href: 'https://viralprintsusa.com',
+    category: 'Creative'
+  },
+  {
+    name: 'Talk Sense',
+    description: 'A podcast and YouTube show covering entrepreneurship, wealth, health, relationships, and personal growth. No filters.',
+    href: 'https://www.youtube.com/@talksense360',
+    category: 'Media'
+  },
+  {
+    name: 'Insurance Mac',
+    description: 'Insurance solutions designed to protect what you have built and create a foundation for what comes next.',
+    href: '#connect',
+    category: 'Financial Services'
+  },
+  {
+    name: 'Credit Mac',
+    description: 'Credit education and strategy to help individuals build the financial foundation that opens every door.',
+    href: '#connect',
+    category: 'Financial Services'
+  },
+  {
+    name: 'Mac Holding LLC',
+    description: 'The parent entity behind the Mac Financial Group family of businesses and ventures.',
+    href: '#connect',
+    category: 'Holding Company'
+  }
+];
+
 export const blogPosts: BlogPost[] = [
   {
     category: 'Service',
     title: 'Why I Started a Nonprofit While Building a Business',
     excerpt: 'The deeper reason service has to stay in the center, even when business growth gets loud.',
     date: 'March 11, 2026',
-    href: '#'
+    href: '#',
+    comingSoon: true
   },
   {
     category: 'Wealth',
     title: 'The Financial Moves I Wish I Made in My 20s',
     excerpt: 'The simple money decisions that matter more than looking impressive online.',
     date: 'February 26, 2026',
-    href: '#'
+    href: '#',
+    comingSoon: true
   },
   {
     category: 'Health',
     title: 'How I Train My Body and My Business at the Same Time',
     excerpt: 'Why routines, recovery, and self-control shape more than your physique.',
     date: 'February 8, 2026',
-    href: '#'
+    href: '#',
+    comingSoon: true
   },
   {
     category: 'Service',
     title: 'Vertical Gardens, Community, and What Food Access Really Means',
     excerpt: 'A closer look at why access, education, and infrastructure all have to move together.',
     date: 'January 24, 2026',
-    href: '#'
+    href: '#',
+    comingSoon: true
   },
   {
     category: 'Wealth',
     title: 'Building Credit as a Wealth Foundation Tool',
     excerpt: 'Credit is not the finish line, but it can absolutely become the lever.',
     date: 'January 9, 2026',
-    href: '#'
+    href: '#',
+    comingSoon: true
   },
   {
     category: 'Health',
     title: 'The Discipline Equation: Military, Entrepreneurship, and You',
     excerpt: 'What service taught me about showing up when motivation does not.',
     date: 'December 15, 2025',
-    href: '#'
+    href: '#',
+    comingSoon: true
   }
 ];
 
@@ -166,17 +232,20 @@ export const episodes: Episode[] = [
   {
     title: 'What Building in Public Actually Feels Like',
     description: 'The tension between vision, pressure, doubt, and staying honest while the work is still messy.',
-    href: '#'
+    href: 'https://www.youtube.com/@talksense360',
+    comingSoon: true
   },
   {
     title: 'Money, Mission, and Not Selling Your Soul',
     description: 'A real conversation on building income without drifting away from your values.',
-    href: '#'
+    href: 'https://www.youtube.com/@talksense360',
+    comingSoon: true
   },
   {
     title: 'The Cost of Waiting for Confidence',
     description: 'Why a lot of smart people stay stuck, and what to do when certainty never fully arrives.',
-    href: '#'
+    href: 'https://www.youtube.com/@talksense360',
+    comingSoon: true
   }
 ];
 
@@ -184,37 +253,37 @@ export const tools: ToolItem[] = [
   {
     name: 'Notion',
     description: 'My operating system for planning, content capture, and keeping projects moving.',
-    href: '#',
+    href: 'https://notion.so',
     icon: LayoutDashboard
   },
   {
     name: 'Make.com',
     description: 'Automation flows that save time and reduce repetitive admin work.',
-    href: '#',
+    href: 'https://make.com',
     icon: ArrowUpRight
   },
   {
     name: 'Vercel',
     description: 'Fast deployment and hosting for sites, landing pages, and experiments.',
-    href: '#',
+    href: 'https://vercel.com',
     icon: ShieldCheck
   },
   {
     name: 'Canva',
     description: 'Design workflows for decks, social posts, lead magnets, and brand assets.',
-    href: '#',
+    href: 'https://canva.com',
     icon: BriefcaseBusiness
   },
   {
     name: 'Books and Courses',
     description: 'The frameworks and learning resources shaping how I think and build.',
-    href: '#',
+    href: '#connect',
     icon: BookOpen
   },
   {
     name: 'Financial Tools',
     description: 'Accounts, systems, and calculators that make the money side more intentional.',
-    href: '#',
+    href: '#connect',
     icon: Wallet
   }
 ];
@@ -238,7 +307,7 @@ export const collaborationOptions: CollaborationOption[] = [
 ];
 
 export const trustPoints = [
-  'Army Reserve Intelligence Analyst',
+  'Proud U.S. Army Member',
   'Founder, Sensible Living Foundation',
   'Financial educator and builder in public'
 ];
@@ -249,8 +318,8 @@ export const stats = [
     label: 'Core pillars shaping the platform'
   },
   {
-    value: '1',
-    label: 'Mission: wealth, health, and service together'
+    value: '8+',
+    label: 'Active ventures across business, nonprofit, and media'
   },
   {
     value: '100%',
@@ -283,11 +352,12 @@ export const heroButtons = [
 export const talkSenseMeta = {
   heading: 'Talk Sense | The Show',
   subheading: 'Entrepreneurship. Wealth. Health. Relationships. Personal growth. No filters.',
-  videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder'
+  videoUrl: 'PLACEHOLDER'
 };
 
 export const sectionEyebrows = {
   pillars: 'The foundation',
+  ventures: 'What I am building',
   blog: 'Content hub',
   talkSense: 'Podcast and YouTube',
   resources: 'What I use',
@@ -306,7 +376,7 @@ export const formSubjects = ['Speaking', 'Collaboration', 'SLF', 'Other'];
 export const heroMeta = {
   headline: 'Wealth. Health. Service.',
   subheadline:
-    "I'm Mekonnen, entrepreneur, soldier, founder, and builder. This is where I share everything I'm learning on the road to financial freedom, without losing who I am.",
+    "I am Mekonnen, entrepreneur, Army member, nonprofit founder, and builder. This is where I share everything I am learning on the road to financial freedom, without losing who I am.",
   tagline: 'Build wealth. Protect your health. Serve the world.',
   secondaryLine: "The blueprint for a life you do not need to escape from."
 };
