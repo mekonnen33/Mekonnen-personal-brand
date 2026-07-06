@@ -103,27 +103,24 @@ export default function HomePage() {
               </Reveal>
 
               <Reveal delay={120}>
-                <div className="card-base relative overflow-hidden p-5 sm:p-6">
+                <div className="card-base relative overflow-hidden p-3 sm:p-4">
                   <div className="absolute inset-0 bg-gradient-to-br from-gold/15 via-transparent to-transparent" />
-                  <div className="relative rounded-[24px] border border-white/10 bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-5">
-                    <div className="rounded-[24px] border border-dashed border-gold/30 bg-black/20 p-5">
-                      <div className="aspect-[4/5] rounded-[22px] bg-[linear-gradient(180deg,rgba(201,168,76,0.24),rgba(255,255,255,0.03))] p-6">
-                        <div className="flex h-full flex-col justify-between rounded-[20px] border border-white/10 bg-black/25 p-5">
-                          <div>
-                            <p className="text-sm uppercase tracking-[0.22em] text-gold">Professional photo</p>
-                            <p className="mt-2 max-w-xs text-sm leading-6 text-muted">
-                              Replace this area with your final headshot, studio portrait, or strong lifestyle image.
-                            </p>
-                          </div>
-
-                          <div className="space-y-4">
-                            {trustPoints.map((point) => (
-                              <div key={point} className="flex items-start gap-3">
-                                <BadgeCheck className="mt-0.5 h-5 w-5 text-gold" />
-                                <p className="text-sm leading-6 text-text">{point}</p>
-                              </div>
-                            ))}
-                          </div>
+                  <div className="relative rounded-[24px] border border-white/10 bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-3">
+                    <div className="relative overflow-hidden rounded-[20px]">
+                      <img
+                        src="/headshot.jpg"
+                        alt="Mekonnen Anebo"
+                        className="w-full object-cover object-top"
+                        style={{ aspectRatio: '4/5' }}
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5">
+                        <div className="space-y-2">
+                          {trustPoints.map((point) => (
+                            <div key={point} className="flex items-center gap-2">
+                              <BadgeCheck className="h-4 w-4 shrink-0 text-gold" />
+                              <p className="text-xs font-medium text-white">{point}</p>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
